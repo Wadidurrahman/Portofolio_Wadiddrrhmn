@@ -1,5 +1,5 @@
-<div align="center">
-# Portofolio Wadiddrrhmn
+
+## Portofolio Wadiddrrhmn
 
 Selamat datang di portofolio saya! Di sini Anda akan menemukan beberapa proyek yang saya kerjakan. Mari jelajahi!
 
