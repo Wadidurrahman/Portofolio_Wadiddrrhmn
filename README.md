@@ -4,6 +4,7 @@ Selamat datang di portofolio saya! Di sini Anda akan menemukan beberapa proyek y
 
 ## Cara Menghubungi Saya
 
+<div align="center">
 Jika Anda tertarik dengan salah satu proyek atau ingin berbicara lebih lanjut, jangan ragu untuk menghubungi saya melalui:
 
 - Email: [wadiddrrhmn@gmail.com](wadiddrrhmn@gmail.com)
