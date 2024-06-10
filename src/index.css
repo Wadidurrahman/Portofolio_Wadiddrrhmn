@@ -15,16 +15,3 @@ body,
   padding: 0;
   height: 100%;
 }
-
-.hover-underline::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px; /* Height of the underline */
-  background: currentColor; /* Same color as the text */
-  transition: width 0.3s ease;
-}
-
-.hover-underline:hover::after {
-  width: 100%;
-}
