@@ -1,10 +1,9 @@
 
-## Portofolio Wadiddrrhmn
+## Portofolio Wadiddrrhmn (Proses pengerjaan)
 
 Selamat datang di portofolio saya! Di sini Anda akan menemukan beberapa proyek yang saya kerjakan. Mari jelajahi!
 
-##  Menghubungi Saya
-
+## Menghubungi Saya
 
 Jika Anda tertarik dengan salah satu proyek atau ingin berbicara lebih lanjut, jangan ragu untuk menghubungi saya melalui:
 
