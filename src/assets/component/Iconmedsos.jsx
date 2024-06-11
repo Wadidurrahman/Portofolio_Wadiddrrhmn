@@ -13,9 +13,9 @@ const Iconmedsos = () => {
   };
 
   const icons = [
-    { name: "TikTok", icon: <FaTiktok size={18} /> },
-    { name: "GitHub", icon: <FaGithub size={18} /> },
-    { name: "Instagram", icon: <FaInstagram size={18} /> },
+    { name: "TikTok", icon: <FaTiktok size={27} /> },
+    { name: "GitHub", icon: <FaGithub size={27} /> },
+    { name: "Instagram", icon: <FaInstagram size={27} /> },
   ];
 
   return (
