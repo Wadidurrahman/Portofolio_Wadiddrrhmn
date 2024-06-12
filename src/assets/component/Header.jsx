@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { FaTiktok, FaGithub, FaInstagram, FaEnvelope, FaPhone, FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -39,7 +40,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${visible ? "" : "transform -translate-y-full transition-transform duration-300 ease-in-out"} backdrop-blur-lg p-4 relative`} style={{ position: "sticky", top: 0, zIndex: 1000 }}>
+    <motion.nav
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`${visible ? "" : "transform -translate-y-full transition-transform duration-300 ease-in-out"} backdrop-blur-lg p-4 relative`}
+      style={{ position: "sticky", top: 0, zIndex: 1000 }}
+    >
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-[#38BDF8] font-bold text-xl px-10">Wadidurrhmn.</div>
         <div className="hidden md:flex space-x-4 font-semibold relative right-[8rem]">
@@ -73,7 +80,7 @@ const Navbar = () => {
           {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
         </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

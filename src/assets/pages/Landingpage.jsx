@@ -3,6 +3,8 @@ import Imgbg from "../../assets/Aset-Landingpage/pp3.png";
 import Iconmedsos from "../component/Iconmedsos";
 import ScrollToTop from "../component/ScrollToTop";
 import Imgabout from "../../assets/Aset-Landingpage/imgabout.jpg";
+import Cardabout from "../component/Cardabout";
+import IsiTech from "../component/IsiTech";
 // import Bg3 from "../../assets/Aset-Landingpage/bg3.jpg";
 
 const fontStyles = `
@@ -23,13 +25,14 @@ const Judul = {
 };
 
 const page2 = [{ Headline: "ABOUT ME" }];
+const page3 = [{ Headline2: "TECH STACK & TOOLS" }];
 
 const About = [
   { h1: "Hello I'am" },
   { part2: "Wadidur Rahman" },
   { h2: "A Frontend Developer Based In Indonesia" },
   {
-    p: "Perkenalkan, Nama Saya Wadid. Saya adalah seorang penggemar Teknologi dengan minat khusus di dunia IT yaitu front-end development. Saya selalu penasaran bagaimana teknologi bekerja dan berinteraksi dengan pengguna. Semangat inilah yang mendorong saya untuk mempelajari lebih lanjut tentang pemrograman dan desain antarmuka.",
+    p: "Hallo Semuanya,Saya Wadid. Saya adalah seorang penggemar Teknologi dengan minat khusus di dunia programming yaitu front-end development. Saya selalu penasaran bagaimana teknologi bekerja dan berinteraksi dengan pengguna UI. Semangat inilah yang mendorong saya untuk mempelajari lebih lanjut tentang pemrograman dan desain antarmuka.",
   },
 ];
 
@@ -56,7 +59,7 @@ const FullPageBackground = () => {
         {page2.map((item, index) => (
           <div key={index} className="text-center relative mt-10">
             <h2
-              className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-400 to-white"
+              className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-white"
               style={{
                 textShadow: "2px 2px 4px rgba(158, 158, 158, 0.5)",
                 transform: "skew(10deg)",
@@ -68,20 +71,62 @@ const FullPageBackground = () => {
             {item.Headline && <h2 className="text-3xl font-bold relative -top-8">{item.Headline}</h2>}
           </div>
         ))}
-        <div className="flex p-4">
-          <div className="relative left-20 top-5">
-            <img className="w-1/2 h-auto rounded-md " src={Imgabout} alt="img-element" />
+        <div className="relative justify-items-center px-36 ">
+          <div className="flex gap-36 p-4 relative">
+            <div className="absolute left-10 top-5 transform rotate-12 w-80 h-96 bg-[#b6faff] rounded-lg shadow-lg -z-10"></div>
+            <div className="absolute left-14 top-10 transform rotate-6 w-80 h-96 bg-[#52eefa] rounded-lg shadow-lg -z-20"></div>
+            <div className="relative">
+              <img className="w-80 h-96 rounded-md" src={Imgabout} alt="img-element" />
+            </div>
+            <div className="relative w-2/4 text-left mt-4">
+              {About.map((item, index) => (
+                <div key={index} className="mb-2">
+                  <div className="flex items-center">
+                    {item.h1 && <h1 className="text-2xl">{item.h1}</h1>}
+                    {item.part2 && <h2 className="text-3xl font-bold text-[#52eefa]">{item.part2}</h2>}
+                  </div>
+                  {item.h2 && (
+                    <h2 className="text-lg font-light">
+                      A <span className="text-[#52eefa] font-semibold">Frontend Developer</span> Based In <span className="text-[#52eefa] font-semibold">Indonesia</span>
+                    </h2>
+                  )}
+                  {item.p && <p className=" text-sm">{item.p}</p>}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="relative w-2/4 text-left right-10 mt-8">
-            {About.map((item, index) => (
-              <div key={index}>
-                {item.h1 && <h1 className="text-4xl font-bold">{item.h1}</h1>}
-                {item.part2 && <h2 className="text-3xl font-semibold text-blue-600">{item.part2}</h2>}
-                {item.h2 && <h2 className="text-2xl font-light">{item.h2}</h2>}
-                {item.p && <p className="mt-4 text-lg">{item.p}</p>}
+        </div>
+        <hr className="relative bottom-32  border border-gray-400 px-[14.5rem] left-56" />
+        <Cardabout />
+      </section>
+      <section>
+        <div>
+          <section className="relative w-full h-screen flex flex-col items-center rounded-lg bg-white z-20">
+            {page3.map((item, index) => (
+              <div key={index} className="text-center relative mt-10">
+                <h2
+                  className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-white"
+                  style={{
+                    textShadow: "2px 2px 4px rgba(158, 158, 158, 0.5)",
+                    transform: "skew(10deg)",
+                    fontFamily: "'Bungee Outline', sans-serif",
+                  }}
+                >
+                  ~ Tech Stack & Tools ~
+                </h2>
+                {item.Headline2 && <h2 className="text-3xl font-bold relative -top-8">{item.Headline2}</h2>}
               </div>
             ))}
-          </div>
+            <div className="flex justify-between items-center gap-10">
+              <div>
+                <IsiTech />
+              </div>
+              <div className="relative text-right">
+                <h1 className="text-2xl text-[#38BDF8] font-bold">Tech Stack & Tools</h1>
+                <p className="text-sm text-gray-500">jamndomkowmndkomaowkndkowankod</p>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
       <ScrollToTop />
