@@ -1,9 +1,9 @@
 import React from "react";
 
 const data = [
-  { judul: "Pengalaman", Number: "2++", Discripsi: "mdnanwdowa" },
-  { judul: "Projeck", Number: "5++", Discripsi: "andkkaweod" },
-  { judul: "Bahasa", Number: "5++", Discripsi: "oakadlawdad" },
+  { judul: "Pengalaman", Number: "2+", Discripsi: "mdnanwdowa" },
+  { judul: "Projeck", Number: "5+", Discripsi: "andkkaweod" },
+  { judul: "Bahasa", Number: "5+", Discripsi: "oakadlawdad" },
 ];
 
 const Cardabout = () => {

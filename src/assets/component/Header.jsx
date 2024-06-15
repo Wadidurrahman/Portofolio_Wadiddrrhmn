@@ -47,7 +47,7 @@ const Navbar = () => {
       className={`${visible ? "" : "transform -translate-y-full transition-transform duration-300 ease-in-out"} backdrop-blur-lg p-4 relative`}
       style={{ position: "sticky", top: 0, zIndex: 1000 }}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center z-auto">
         <div className="text-[#38BDF8] font-bold text-xl px-10">Wadidurrhmn.</div>
         <div className="hidden md:flex space-x-4 font-semibold relative right-[8rem]">
           {["Home", "About Me", "Projects", "Experience", "Blogs"].map((item) => (
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className={`${navOpen ? "block" : "hidden"}  md:hidden backdrop-blur-xl p-4 absolute rounded-lg left-60 text-right`}>
+      <div className={`${navOpen ? "block" : "hidden"}  md:hidden backdrop-blur2xl p-4 absolute rounded-lg left-60 text-right`}>
         {["Home", "About Me", "Projects", "Experience", "Blogs"].map((item) => (
           <a key={item} href="#" className={`block py-2 px-4 text-white hover:bg-[#1ca1db]  transition duration-300 rounded-lg ${activeNav === item ? "bg-[#1ca1db] rounded-lg " : ""}`} onClick={() => handleNavClick(item)}>
             {item}

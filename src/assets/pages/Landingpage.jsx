@@ -5,6 +5,8 @@ import ScrollToTop from "../component/ScrollToTop";
 import Imgabout from "../../assets/Aset-Landingpage/imgabout.jpg";
 import Cardabout from "../component/Cardabout";
 import IsiTech from "../component/IsiTech";
+import CardProject from "../component/CardProject/ElementCard";
+// import JudulPerpage from "../component/JudulPerpage";
 // import Bg3 from "../../assets/Aset-Landingpage/bg3.jpg";
 
 const fontStyles = `
@@ -26,6 +28,7 @@ const Judul = {
 
 const page2 = [{ Headline: "ABOUT ME" }];
 const page3 = [{ Headline2: "TECH STACK & TOOLS" }];
+const page4 = [{ Headline4: "PROJECTS" }];
 
 const About = [
   { h1: "Hello I'am" },
@@ -46,6 +49,7 @@ const FullPageBackground = () => {
           <h1 className="text-9xl judul">{Judul.isi}</h1>
           <h1 className="text-9xl judul">{Judul.isi2}</h1>
         </div>
+        <div></div>
         <section className="absolute h-full w-full top-[1%] px-64 left-50 z-20">
           <div className="relative w-full h-full">
             <img className="absolute inset-0 w-full h-full object-cover" src={Imgbg} alt="Bgimg" />
@@ -71,7 +75,7 @@ const FullPageBackground = () => {
             {item.Headline && <h2 className="text-3xl font-bold relative -top-8">{item.Headline}</h2>}
           </div>
         ))}
-        <div className="relative justify-items-center px-36 ">
+        <div className="relative justify-items-center px-36">
           <div className="flex gap-36 p-4 relative">
             <div className="absolute left-10 top-5 transform rotate-12 w-80 h-96 bg-[#b6faff] rounded-lg shadow-lg -z-10"></div>
             <div className="absolute left-14 top-10 transform rotate-6 w-80 h-96 bg-[#52eefa] rounded-lg shadow-lg -z-20"></div>
@@ -96,37 +100,54 @@ const FullPageBackground = () => {
             </div>
           </div>
         </div>
-        <hr className="relative bottom-32  border border-gray-400 px-[14.5rem] left-56" />
+        <hr className="relative bottom-32 border border-gray-400 px-[14.5rem] left-56" />
         <Cardabout />
       </section>
-      <section>
-        <div>
-          <section className="relative w-full h-screen flex flex-col items-center rounded-lg bg-white z-20">
-            {page3.map((item, index) => (
-              <div key={index} className="text-center relative mt-10">
-                <h2
-                  className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-white"
-                  style={{
-                    textShadow: "2px 2px 4px rgba(158, 158, 158, 0.5)",
-                    transform: "skew(10deg)",
-                    fontFamily: "'Bungee Outline', sans-serif",
-                  }}
-                >
-                  ~ Tech Stack & Tools ~
-                </h2>
-                {item.Headline2 && <h2 className="text-3xl font-bold relative -top-8">{item.Headline2}</h2>}
-              </div>
-            ))}
-            <div className="flex justify-between items-center gap-10">
-              <div>
-                <IsiTech />
-              </div>
-              <div className="relative text-right">
-                <h1 className="text-2xl text-[#38BDF8] font-bold">Tech Stack & Tools</h1>
-                <p className="text-sm text-gray-500">jamndomkowmndkomaowkndkowankod</p>
-              </div>
-            </div>
-          </section>
+
+      <section className="relative w-full h-screen flex flex-col items-center rounded-lg bg-white z-20">
+        {page3.map((item, index) => (
+          <div key={index} className="text-center relative mt-10">
+            <h2
+              className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-white"
+              style={{
+                textShadow: "2px 2px 4px rgba(158, 158, 158, 0.5)",
+                transform: "skew(10deg)",
+                fontFamily: "'Bungee Outline', sans-serif",
+              }}
+            >
+              ~ Tech Stack & Tools ~
+            </h2>
+            {item.Headline2 && <h2 className="text-3xl font-bold relative -top-8">{item.Headline2}</h2>}
+          </div>
+        ))}
+        <div className="flex justify-between items-center gap-2">
+          <div className="relative left-16 w-2/3 h-1/2">
+            <IsiTech />
+          </div>
+          <div className="relative right-10 text-right">
+            <h1 className="relative text-2xl text-[#38BDF8] font-bold">Tech Stack & Tools</h1>
+            <p className="relative text-xs text-gray-500 w-1/2 left-52">Beberapa list yang saya gunakan saat ini, untuk menunjang kinerja saya</p>
+          </div>
+        </div>
+      </section>
+      <section className="relative w-full h-screen flex flex-col items-center rounded-lg z-20">
+        {page4.map((item, index) => (
+          <div key={index} className="text-center relative mt-10">
+            <h2
+              className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-white"
+              style={{
+                textShadow: "2px 2px 4px rgba(158, 158, 158, 0.5)",
+                transform: "skew(10deg)",
+                fontFamily: "'Bungee Outline', sans-serif",
+              }}
+            >
+              ~ Projects ~
+            </h2>
+            {item.Headline4 && <h2 className="text-3xl font-bold relative -top-8">{item.Headline4}</h2>}
+          </div>
+        ))}
+        <div className="relative px-36">
+          <CardProject />
         </div>
       </section>
       <ScrollToTop />
