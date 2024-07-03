@@ -1,9 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faJs, faHtml5, faCss3Alt, faNodeJs, faReact, faPhp, faGithub, faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faJs, faHtml5, faCss3Alt, faNodeJs, faReact, faPhp, faGithub, faVuejs, faGolang } from "@fortawesome/free-brands-svg-icons";
 import Icontailwindcss from "../Icons/Tailwind_CSS_Logo.svg";
 import Iconexspressjs from "../Icons/expressjs-ar21.svg";
 import Iconmysql from "../Icons/mysql.svg";
+import { icon } from "@fortawesome/fontawesome-svg-core";
+import { color } from "framer-motion";
 
 const icons = [
   { icon: faJs, color: "#F0DB4F", name: "JavaScript", description: "JavaScript adalah bahasa skrip serbaguna yang terutama digunakan untuk pengembangan web." },

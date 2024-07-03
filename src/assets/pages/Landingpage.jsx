@@ -6,6 +6,7 @@ import Imgabout from "../../assets/Aset-Landingpage/imgabout.jpg";
 import Cardabout from "../component/Cardabout";
 import IsiTech from "../component/IsiTech";
 import CardProject from "../component/CardProject/ElementCard";
+import Discripsi from "../component/ComponentExsperion/Intro";
 // import JudulPerpage from "../component/JudulPerpage";
 // import Bg3 from "../../assets/Aset-Landingpage/bg3.jpg";
 
@@ -29,6 +30,7 @@ const Judul = {
 const page2 = [{ Headline: "ABOUT ME" }];
 const page3 = [{ Headline2: "TECH STACK & TOOLS" }];
 const page4 = [{ Headline4: "PROJECTS" }];
+const page5 = [{ Headline5: "Exsperience" }];
 
 const About = [
   { h1: "Hello I'am" },
@@ -148,6 +150,26 @@ const FullPageBackground = () => {
         ))}
         <div className="relative px-36">
           <CardProject />
+        </div>
+      </section>
+      <section className="relative w-full h-screen flex flex-col items-center rounded-lg z-10">
+        {page5.map((item, index) => (
+          <div key={index} className="text-center relative mt-10">
+            <h2
+              className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-200 to-white"
+              style={{
+                textShadow: "2px 2px 4px rgba(158, 158, 158, 0.5)",
+                transform: "skew(10deg)",
+                fontFamily: "'Bungee Outline', sans-serif",
+              }}
+            >
+              ~ Exsperience ~
+            </h2>
+            {item.Headline5 && <h2 className="text-3xl font-bold relative -top-8">{item.Headline5}</h2>}
+          </div>
+        ))}
+        <div>
+          <Discripsi />
         </div>
       </section>
       <ScrollToTop />

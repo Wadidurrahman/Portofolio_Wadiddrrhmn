@@ -21,10 +21,15 @@ const ScrollToTop = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    const scrollStep = -window.scrollY / (500 / 15);
+    const smoothScroll = () => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep);
+        requestAnimationFrame(smoothScroll);
+      }
+    };
+
+    requestAnimationFrame(smoothScroll);
   };
 
   return (
