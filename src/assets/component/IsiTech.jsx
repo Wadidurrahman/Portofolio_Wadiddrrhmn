@@ -23,7 +23,7 @@ const icons = [
 
 const MyComponent = () => {
   return (
-    <div className="relative bg-gray-100 rounded-md p-10 space-x-10 shadow-md flex flex-wrap justify-center">
+    <div className="relative bg-gray-200 rounded-md p-10 space-x-10 shadow-md flex flex-wrap justify-center ">
       {icons.map((icon, index) => (
         <div key={index} className="relative group inline-block m-4">
           <div className="flex flex-col items-center">

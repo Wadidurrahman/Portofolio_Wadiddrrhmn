@@ -50,7 +50,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center z-auto">
         <div className="text-[#38BDF8] font-bold text-xl px-10">Wadidurrhmn.</div>
         <div className="hidden md:flex space-x-4 font-semibold relative right-[8rem]">
-          {["Home", "About Me", "Projects", "Experience", "Blogs"].map((item) => (
+          {["Home", "About Me", "Projects", "Experience", "Contact"].map((item) => (
             <a key={item} href="#" className={`nav-a relative text-gray-400 hover:text-[#38BDF8] transition duration-300 ${activeNav === item ? "text-[#38BDF8]" : ""}`} onClick={() => handleNavClick(item)}>
               {item}
               <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-[#38BDF8] transition-all duration-300 transform -translate-x-1/2 group-hover:w-full"></span>
