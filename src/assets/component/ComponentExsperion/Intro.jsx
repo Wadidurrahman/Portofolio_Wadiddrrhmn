@@ -12,7 +12,7 @@ const Descripsi = () => {
     <>
       <main>
         {descriptions.map((description, index) => (
-          <div key={index} className="relative justify-center items-center text-center py-2 left-72 w-1/2 text-sm">
+          <div key={index} className="relative justify-center items-center text-center py-2 left-72 w-1/2  text-sm text-gray-400 ">
             {description.isi}
           </div>
         ))}

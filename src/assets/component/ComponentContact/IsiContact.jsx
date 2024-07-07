@@ -1,5 +1,6 @@
 import React from "react";
 import CardMedsos from "./CardMedsos";
+import FormTable from "./FormTable";
 
 const IsiContact = () => {
   const Data = [{ judul: "Jangan ragu untuk menghubungi saya" }, { subjudul: "Anda bisa hubungi saya melalui media sosial dibawah ini atau melalui isi form yang terlah tersedia" }];
@@ -14,6 +15,7 @@ const IsiContact = () => {
           </div>
         ))}
         <CardMedsos />
+        <FormTable />
       </div>
     </>
   );
