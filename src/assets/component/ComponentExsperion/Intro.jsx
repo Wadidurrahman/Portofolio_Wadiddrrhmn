@@ -9,16 +9,14 @@ const Descripsi = () => {
   ];
 
   return (
-    <>
-      <main>
-        {descriptions.map((description, index) => (
-          <div key={index} className="relative justify-center items-center text-center py-2 left-72 w-1/2  text-sm text-gray-400 ">
-            {description.isi}
-          </div>
-        ))}
-        <TabelExperience />
-      </main>
-    </>
+    <div className="px-4 py-8">
+      {descriptions.map((description, index) => (
+        <div key={index} className="relative left-64 text-center mb-8 text-gray-700 text-base w-1/2 ">
+          {description.isi}
+        </div>
+      ))}
+      <TabelExperience />
+    </div>
   );
 };
 

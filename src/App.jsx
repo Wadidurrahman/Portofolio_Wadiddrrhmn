@@ -1,7 +1,7 @@
-// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import Header from "./assets/component/Header";
+import Footer from "./assets/component/Footer";
 import Landingpage from "./assets/pages/Landingpage";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <Route path="/landingpage" element={<Landingpage />} />
         <Route path="/" element={<Landingpage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

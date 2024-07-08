@@ -8,12 +8,12 @@ import SertifikatAlibabaCloud from "../../AsetExperience/sartifikatalibaba.jpg";
 import SertifikatCodepolitan from "../../AsetExperience/sartifikatcodepolitan (1).png";
 
 const TabelExperience = () => {
-  const [isPopupVisible, setPopupVisible] = useState(false);
+  const [showPopupId, setShowPopupId] = useState(null);
   const [popupImages, setPopupImages] = useState([]);
 
-  const togglePopup = (images) => {
+  const togglePopup = (id, images) => {
     setPopupImages(images);
-    setPopupVisible(!isPopupVisible);
+    setShowPopupId(showPopupId === id ? null : id);
   };
 
   const data = [
@@ -22,10 +22,9 @@ const TabelExperience = () => {
       logo: LogoMerdeka,
       by: "@Kemendikbudristek",
       judul: "Kampus Merdeka (MBKM)",
-      subjudul: "Sertifikat",
+      subjudul: "Studi Independen",
       date: "26 Juni 2024",
       warna: "#007BFF",
-      sertifikat: "sertifikatalibabacloud",
       discription: [
         {
           subjudul2: "Keahlian yang Dipelajari:",
@@ -44,10 +43,9 @@ const TabelExperience = () => {
       logo: LogoIL,
       by: "@PT.KINEMA SYSTRANS MULTIMEDIA",
       judul: "Kampus Merdeka (MBKM)",
-      subjudul: "Sertifikat",
+      subjudul: "Web Development & UI/UX",
       date: "23 Juni 2024",
       warna: "#757575",
-      sertifikat: "sertifikatcodepolitan",
       discription: [
         {
           subjudul2: "Keahlian yang Dipelajari:",
@@ -66,10 +64,9 @@ const TabelExperience = () => {
       logo: LogoAlibabaCloud,
       by: "@ Alibaba Group",
       judul: "Alibaba Cloud",
-      subjudul: "Sertifikat",
+      subjudul: "Web Development",
       date: "23 Juni 2024",
       warna: "#FF8C00",
-      sertifikat: "sertifikatalibabacloud",
       discription: [
         {
           subjudul2: "Keahlian yang Dipelajari:",
@@ -88,10 +85,9 @@ const TabelExperience = () => {
       logo: LogoCodepolitan,
       by: "@PT.CodePolitan Media Utama",
       judul: "Alibaba Cloud",
-      subjudul: "Sertifikat",
+      subjudul: "Front End",
       date: "23 Agustus 2023",
       warna: "#000000",
-      sertifikat: "sertifikatcodepolitan",
       discription: [
         {
           subjudul2: "Keahlian yang Dipelajari:",
@@ -107,15 +103,10 @@ const TabelExperience = () => {
     },
   ];
 
-  const imageMap = {
-    sertifikatalibabacloud: SertifikatAlibabaCloud,
-    sertifikatcodepolitan: SertifikatCodepolitan,
-  };
-
   return (
     <main>
       {data.map((item) => (
-        <div key={item.id} className="relative flex justify-center items-center w-full h-full gap-8 text-sm mt-4 border-solid border-2 border-[#003f82] shadow-lg px-4 py-12 rounded-lg mx-auto" style={{ backgroundColor: item.warna }}>
+        <div key={item.id} className="relative flex justify-center items-center w-full h-full gap-8 text-sm mt-4 border-solid border-2 border-[#003f82] shadow-lg px-2 py-12 rounded-lg mx-auto" style={{ backgroundColor: item.warna }}>
           <img src={item.logo} alt="logo" className="w-45 h-20 rounded-lg" />
           <div className="text-white">
             <h1 className="text-lg font-semibold">{item.judul}</h1>
@@ -135,10 +126,7 @@ const TabelExperience = () => {
             ))}
           </div>
           <div className="relative mb-44">
-            <button className="relative justify-end border border-gray-500 bg-[#38BDF8] px-12 py-2 rounded-lg font-semibold text-sm text-white" onClick={() => togglePopup([{ id: item.id, src: imageMap[item.sertifikat] }])}>
-              Lihat Sertifikat
-            </button>
-            {isPopupVisible && <PopupSertifikat images={popupImages} onClose={() => setPopupVisible(false)} />}
+            <h4 className="relative justify-end border border-gray-500 bg-[#38BDF8] p-2 rounded-lg font-semibold text-sm text-white cursor-pointer">{item.subjudul}</h4>
           </div>
         </div>
       ))}

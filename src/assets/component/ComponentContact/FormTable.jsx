@@ -10,7 +10,7 @@ const FormTable = () => {
   ];
 
   return (
-    <div>
+    <div className="">
       {data.map((item, index) => (
         <div key={index} className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
           <h2 className="text-lg font-semibold text-[#38BDF8] mt-8">{item.judul}</h2>
