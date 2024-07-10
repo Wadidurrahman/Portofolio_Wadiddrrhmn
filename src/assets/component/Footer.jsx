@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full  flex flex-col z-20 bg-gray-800 text-white py-8 mt-[85rem]">
+    <footer className="relative w-full  flex flex-col z-20 bg-gray-800 text-white py-8 mt-52">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <h2 className="text-2xl font-semibold">Portofolio Saya</h2>
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center">
           <div className="mb-4 md:mb-0 md:mr-8">
             <h3 className="text-xl font-semibold">Hubungi Saya</h3>
-            <p className="text-gray-400">Email: contoh@example.com</p>
+            <p className="text-gray-400">Email: wadidurrhmn@gmail.com</p>
             <p className="text-gray-400">Telepon: +62 123 456 789</p>
           </div>
           <div className="flex gap-4">

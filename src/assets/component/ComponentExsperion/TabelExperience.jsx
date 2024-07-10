@@ -148,14 +148,14 @@ const TabelExperience = () => {
       </div>
       <div className="flex justify-center mt-4 mx-auto max-w-screen-lg space-x-2">
         {data.map((item, index) => (
-          <div key={item.id} className={`w-2 h-2 rounded-full bg-gray-400 ${index === currentCardIndex ? "bg-blue-800" : ""}`} />
+          <div key={item.id} className={`w-2 h-2 rounded-full bg-gray-400 ${index === currentCardIndex ? "bg-blue-600" : ""}`} />
         ))}
       </div>
-      <div className="flex justify-between mx-auto max-w-screen-lg">
-        <button className="bg-gray-200 px-4 py-2 rounded-lg" onClick={previousCard} disabled={currentCardIndex === 0}>
+      <div className="relative -top-60 flex justify-between mx-auto max-w-screen-lg cursor-pointer">
+        <button className="bg-[#38BDF8] hover:bg-gray-300 duration-300 text-white hover:text-[#38BDF8] px-4 py-2 rounded-lg shadow-lg" onClick={previousCard} disabled={currentCardIndex === 0}>
           {"<"}
         </button>
-        <button className="bg-gray-200 px-4 py-2 rounded-lg" onClick={nextCard} disabled={currentCardIndex === data.length - 1}>
+        <button className="bg-[#38BDF8] hover:bg-gray-300 duration-300 text-white hover:text-[#38BDF8] px-4 py-2 rounded-lg shadow-lg" onClick={nextCard} disabled={currentCardIndex === data.length - 1}>
           {">"}
         </button>
       </div>
