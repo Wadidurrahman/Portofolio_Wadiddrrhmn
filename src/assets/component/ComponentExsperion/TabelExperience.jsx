@@ -10,6 +10,7 @@ import SertifikatCodepolitan from "../../AsetExperience/sartifikatcodepolitan (1
 const TabelExperience = () => {
   const [showPopupId, setShowPopupId] = useState(null);
   const [popupImages, setPopupImages] = useState([]);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   const togglePopup = (id, images) => {
     setPopupImages(images);
@@ -103,33 +104,61 @@ const TabelExperience = () => {
     },
   ];
 
+  const previousCard = () => {
+    setCurrentCardIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+  };
+
+  const nextCard = () => {
+    setCurrentCardIndex((prevIndex) => Math.min(prevIndex + 1, data.length - 1));
+  };
+
   return (
-    <main>
-      {data.map((item) => (
-        <div key={item.id} className="relative flex justify-center items-center w-full h-full gap-8 text-sm mt-4 border-solid border-2 border-[#003f82] shadow-lg px-2 py-12 rounded-lg mx-auto" style={{ backgroundColor: item.warna }}>
-          <img src={item.logo} alt="logo" className="w-45 h-20 rounded-lg" />
-          <div className="text-white">
-            <h1 className="text-lg font-semibold">{item.judul}</h1>
-            <p className="text-sm">{item.by}</p>
-            <p className="text-sm mt-2">{item.date}</p>
-            {item.discription.map((desc, index) => (
-              <div key={index}>
-                <h2 className="mt-4 text-white font-semibold">{desc.subjudul2}</h2>
-                <ul className="mt-2 text-white list-disc pl-5">
-                  {desc.isi.map((isi, idx) => (
-                    <li key={idx} className="mt-2">
-                      {isi}
-                    </li>
-                  ))}
-                </ul>
+    <main className="overflow-hidden">
+      <div className="flex items-center justify-center h-full">
+        <div
+          className="relative flex justify-center items-center w-[80%] px-4 py-2 gap-8 text-sm mt-2 border-solid border-2 border-[#003f82] shadow-lg rounded-lg mx-auto transform transition-transform duration-300"
+          style={{ backgroundColor: data[currentCardIndex].warna }}
+        >
+          <img src={data[currentCardIndex].logo} alt="logo" className="w-45 h-20 rounded-lg" />
+          <div className="text-white ml-4 flex flex-col justify-between">
+            <div className="flex">
+              <div className="">
+                <h1 className="text-lg font-semibold">{data[currentCardIndex].judul}</h1>
+                <p className="text-sm">{data[currentCardIndex].by}</p>
+                <p className="text-sm mt-2">{data[currentCardIndex].date}</p>
+                {data[currentCardIndex].discription.map((desc, index) => (
+                  <div key={index}>
+                    <h2 className="mt-4 text-white font-semibold">{desc.subjudul2}</h2>
+                    <ul className="mt-2 text-white list-disc pl-5">
+                      {desc.isi.map((isi, idx) => (
+                        <li key={idx} className="mt-2">
+                          {isi}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="relative mb-44">
-            <h4 className="relative justify-end border border-gray-500 bg-[#38BDF8] p-2 rounded-lg font-semibold text-sm text-white cursor-pointer">{item.subjudul}</h4>
+              <div className="relative  w-1/2">
+                <h4 className="relative justify-end border border-gray-500 bg-[#38BDF8]  p-2 text-center rounded-lg font-semibold text-sm text-white cursor-pointer">{data[currentCardIndex].subjudul}</h4>
+              </div>
+            </div>
           </div>
         </div>
-      ))}
+      </div>
+      <div className="flex justify-center mt-4 mx-auto max-w-screen-lg space-x-2">
+        {data.map((item, index) => (
+          <div key={item.id} className={`w-2 h-2 rounded-full bg-gray-400 ${index === currentCardIndex ? "bg-blue-800" : ""}`} />
+        ))}
+      </div>
+      <div className="flex justify-between mx-auto max-w-screen-lg">
+        <button className="bg-gray-200 px-4 py-2 rounded-lg" onClick={previousCard} disabled={currentCardIndex === 0}>
+          {"<"}
+        </button>
+        <button className="bg-gray-200 px-4 py-2 rounded-lg" onClick={nextCard} disabled={currentCardIndex === data.length - 1}>
+          {">"}
+        </button>
+      </div>
     </main>
   );
 };

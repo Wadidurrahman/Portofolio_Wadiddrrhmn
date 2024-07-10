@@ -9,9 +9,9 @@ const Descripsi = () => {
   ];
 
   return (
-    <div className="px-4 py-8">
+    <div className=" py-4">
       {descriptions.map((description, index) => (
-        <div key={index} className="relative left-64 text-center mb-8 text-gray-700 text-base w-1/2 ">
+        <div key={index} className="relative left-64 justify-center items-center text-center mb-8 text-gray-700 text-base w-1/2 ">
           {description.isi}
         </div>
       ))}
