@@ -8,6 +8,7 @@ import IsiTech from "../component/IsiTech";
 import CardProject from "../component/CardProject/ElementCard";
 import Discripsi from "../component/ComponentExsperion/Intro";
 import IsiContact from "../component/ComponentContact/IsiContact";
+import Service from "../component/Componentservic/Service";
 // import JudulPerpage from "../component/JudulPerpage";
 // import Bg3 from "../../assets/Aset-Landingpage/bg3.jpg";
 
@@ -191,7 +192,9 @@ const FullPageBackground = () => {
             {item.Headline6 && <h2 className="text-3xl font-bold relative -top-8 ">{item.Headline6}</h2>}
           </div>
         ))}
-        <div></div>
+        <div>
+          <Service />
+        </div>
       </section>
       <section className="relative w-full h-screen flex flex-col items-center rounded-lg mt-8 z-10">
         {page7.map((item, index) => (
